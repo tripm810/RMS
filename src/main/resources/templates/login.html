@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body style="background-color: #ededed;">
+	<div class="container-fluid">
+		<div class="row col-lg-4 col-lg-offset-4"
+			style="margin-top: 80px; background-color: #fff; padding: 20px; border: solid 1px #ddd;">
+
+			<h3 class="form-signin-heading" th:text="Login"></h3>
+			<form action="home" th:action="@{/login}" method="post">
+
+				<div th:if="${param.error}"
+					class="alert alert-danger alert-dismissable">
+					<p>
+						<i class="icon fa fa-ban"></i> <span>Invalid Email and
+							Password.</span>
+					</p>
+				</div>
+
+				<div th:if="${param.logout}"
+					class="alert alert-info alert-dismissable">
+					<p>
+						<i class="icon fa fa-info"></i> <span>You have been logged out.</span>
+					</p>
+				</div>
+
+				<br /> <input type="text" id="username" name="username"
+					th:placeholder="UserName" class="form-control" /> <br /> 
+			
+		    <input type="password" th:placeholder="Password" id="password"
+				name="password" class="form-control" /> 
+			<br />
+			
+			<button class="btn btn-lg btn-primary" name="Submit" th:text="Login"
+				value="Login" type="Submit" style="margin-right: 10px;"></button>
+			</form>
+
+		</div>
+	</div>
+</body>
+</html>
