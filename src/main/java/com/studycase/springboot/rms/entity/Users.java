@@ -22,10 +22,7 @@ public class Users {
 	@Column(name = "Password", length = 128, nullable = false)
 	private String password;
 	
-	@ManyToMany(cascade = {
-	        CascadeType.PERSIST,
-	        CascadeType.MERGE
-	    })
+	@ManyToMany
 
 	@JoinTable(name = "app_role", joinColumns = { @JoinColumn(name = "users_id") }, inverseJoinColumns = {
 			@JoinColumn(name = "role_id") })

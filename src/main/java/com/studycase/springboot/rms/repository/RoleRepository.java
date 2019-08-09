@@ -9,5 +9,5 @@ import com.studycase.springboot.rms.entity.Role;
 public interface RoleRepository extends JpaRepository<Role, Long>{
 	List<Role> findAll();
 	
-
+	Role findByroleName(String roleName);
 }
